@@ -1,0 +1,73 @@
+
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #080808;
+  color: white;
+  overflow-x: hidden;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+/* Hide scrollbar but keep scrolling */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Selection */
+
+::selection {
+  background: white;
+  color: black;
+}
+
+/* Better rendering for animated elements */
+
+.hero-visual,
+.floating-card,
+.hero-title,
+.visual-glow,
+.hero-grid,
+.background-number {
+  will-change: transform;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .hero-grid {
+    opacity: 0.35;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
